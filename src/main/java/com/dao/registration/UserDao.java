@@ -10,9 +10,11 @@ import java.util.List;
 public class UserDao implements UserAbstractDao {
     @Override
     public void saveRegisteredUser(User user) {
+        System.out.println("Saving user " + user.getFirstName()+" "+user.getLastName() + " ...");
         SerenitySessionUtils.saveObjectInSerenitySessionList(SerenityKeyConstants.REGISTER_USERS_LIST,user);
     }
     public void saveLoggedInUser(User user) {
+        System.out.println("Saving user " + user.getFirstName()+" "+user.getLastName() + " ...");
         SerenitySessionUtils.saveObjectInSerenitySessionList(SerenityKeyConstants.LOGGEDIN_USERS_LIST,user);
     }
     @Override
@@ -28,7 +30,6 @@ public class UserDao implements UserAbstractDao {
     @Override
     public User getUserByEmail(String email) {
         List<User> users = getAllUsers();
-        //filtrare
         return users.parallelStream().filter(item -> item.getEmail().equalsIgnoreCase(email)).findFirst().orElse(null);
     }
 }

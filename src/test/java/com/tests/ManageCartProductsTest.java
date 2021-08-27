@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 @RunWith(SerenityRunner.class)
 public class ManageCartProductsTest extends BaseTest{
     @Test
-    public void test001ManageGuestCartProducts() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    public void manageGuestCartProducts() throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 //        productFlowSteps.addProductToCart("Chelsea Tee", 3);
         productFlowSteps.addProductToCart("Slim fit Dobby Oxford Shirt", 2);
         cartSteps.verifyCartWithPercentageTaxesDetails(Constants.CART_TAX_RATE);

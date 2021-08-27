@@ -21,13 +21,6 @@ public class SerenitySessionUtils {
         Serenity.getCurrentSession().remove(key);
     }
 
-    @SuppressWarnings("unchecked")
-    public static void saveObjectInTheListInSerenitySession(String key, Object obj) {
-        if (!Serenity.getCurrentSession().containsKey(key)) {
-            Serenity.getCurrentSession().put(key, new ArrayList<>());
-        }
-        ((List<Object>)Serenity.getCurrentSession().get(key)).add(obj);
-    }
 
     public static Object getObjectByMatchingElement(List<Object> list, String matchElement, String matchValue)
             throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
